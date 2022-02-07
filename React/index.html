@@ -1,1 +1,36 @@
-111
+<!DOCTYPE html>
+<html lang="en">
+  <body></body>
+  <div id="root"></div>
+  <!--1. react import
+React JS 는 어플리케이션이 상호작용하게 해주는 라이브러리
+React-dom은 라이브러리 또는 패키지 모든 리액트 Element 들을 HTML body 안에 둘수 있도록 해준다.
+-->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <script type="text/babel">
+    const root = document.getElementById("root");
+
+    function Title () {
+      return (
+        <h3 id="title" onMouseEnter={() => console.log("mouse Enter")}> 
+        Title
+        </h3>   
+    )};
+
+    const Button = () => (
+      <button style={{
+        backgroundColor : "yellow",
+    }} onClick= {() => console.log("Clicked")}> Click 
+      </button>
+    )
+   
+    const Container = () =>(
+       <div><Title/>,<Button/> 
+        </div>
+    )
+   
+    ReactDOM.render(<Container/>, root);
+  </script>
+</html>
