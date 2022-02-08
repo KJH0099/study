@@ -9,28 +9,24 @@ React-dom은 라이브러리 또는 패키지 모든 리액트 Element 들을 HT
   <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-   <script type="text/babel">
+  <script type="text/babel">
     const root = document.getElementById("root");
-
-    function Title () {
+    function Container() {
+      const [counter, setCounter] = React.useState(0);
+      //React.useState() 함수는 초기값을 설정할 수 있음
+      // [0, ƒ] 첫번째는 초기값, 두번째는 값을 바꾸는 함수
+      const onClick = () => {
+        //setCounter(counter + 1);
+        setCounter((current) => current+1);
+        //아래의 버전이 안전하다. 리액트가 current가 확실히 현재 값이라는걸 보장
+      };
       return (
-        <h3 id="title" onMouseEnter={() => console.log("mouse Enter")}> 
-        Title
-        </h3>   
-    )};
-
-    const Button = () => (
-      <button style={{
-        backgroundColor : "yellow",
-    }} onClick= {() => console.log("Clicked")}> Click 
-      </button>
-    )
-   
-    const Container = () =>(
-       <div><Title/>,<Button/> 
+        <div>
+          <h3> Total clicks : {counter}</h3>
+          <button onClick={onClick}> Click </button>
         </div>
-    )
-   
-    ReactDOM.render(<Container/>, root);
+      );
+    }
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
