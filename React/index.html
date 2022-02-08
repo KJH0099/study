@@ -10,23 +10,56 @@ React-dom은 라이브러리 또는 패키지 모든 리액트 Element 들을 HT
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    const root = document.getElementById("root");
+
     function Container() {
-      const [counter, setCounter] = React.useState(0);
-      //React.useState() 함수는 초기값을 설정할 수 있음
-      // [0, ƒ] 첫번째는 초기값, 두번째는 값을 바꾸는 함수
-      const onClick = () => {
-        //setCounter(counter + 1);
-        setCounter((current) => current+1);
-        //아래의 버전이 안전하다. 리액트가 current가 확실히 현재 값이라는걸 보장
+      const [amount, setAmount] = React.useState(0);
+      const [flipped,setFlipped] = React.useState(false);
+
+      // minute 값 받는 함수
+      const onChange = (e) => {
+        setAmount(e.target.value);
       };
+      //reset함수
+      const reset = () => setAmount(0);
+
+      //flip함수 
+      const onFlip = () => {
+        reset();
+        setFlipped((current) => !current);
+        //flipped = true 라면 false로 변경  
+        //flipped = false 라면 true 
+      }
+      
+      
       return (
         <div>
-          <h3> Total clicks : {counter}</h3>
-          <button onClick={onClick}> Click </button>
-        </div>
+          <h1 className="hi"> Converter </h1>
+          <label htmlfor="minutes">Minutes</label>
+          <input
+            value={flipped ? amount * 60 : amount }
+            //flipped 상태라면 amount *60 아니라면 amount 
+            id="minutes"
+            placeholder="min"
+            type="number"
+            onChange={onChange}
+            disabled={flipped} />
+          
+            
+          <label htmlfor="hours">Hours</label>
+          <input 
+          value={flipped ? amount : Math.round(amount/60)} 
+          id="hours" 
+          placeholder="Hours" 
+          type="number"
+          disabled={!flipped}
+          onChange={onChange} />
+          
+         <button onClick={reset}>Reset</button>
+         <button onClick={onFlip}>{filpped ? "Turn back" : ""}</button>
+          </div>
       );
     }
+    const root = document.getElementById("root");
     ReactDOM.render(<Container />, root);
   </script>
 </html>
