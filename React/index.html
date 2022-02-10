@@ -6,38 +6,33 @@
 React JS 는 어플리케이션이 상호작용하게 해주는 라이브러리
 React-dom은 라이브러리 또는 패키지 모든 리액트 Element 들을 HTML body 안에 둘수 있도록 해준다.
 -->
-  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn({text,changeValue}){     // 추가한 prop은 함수()안에 적어준다.  
-      console.log(text,"was redered")
+    function Btn(props){      
       return <button 
-      onClick = {changeValue}
       style={{
         backgroundColor:"tomato",
         color : "white",
         padding : "10px 20px",
         border : 0 ,
         borderRadius : 10,
-        fontSize : 16,
+        fontSize : props.fontSize,
       }}>
-      {text}
+      {props.text}
       </button>
     }
-    const MemorizedBtn = React.memo(Btn)
+    Btn.propType = {
+      text: PropTypes.string.isRequired,
+      fontSize : PropTypes.number,
+    }
     function App() { 
-      const [value,setValue] = React.useState("Save Changes");
-      const changeValue = () => setValue("Revert Changes");
+   
       return (
           <div>
-          <h1 className="hi"> Converter </h1>
-          
-            <MemorizedBtn text={value} onClick={changeValue} />
-            {/*text와 onClick은 porp의 이름일뿐 react가 onClick이벤트를 실제로 추가한 것이 아님*/}
-            {/*Btn 태그안에 prop을 적어서 바로 적용되는 것이 아니고 , 위의 함수안에 적어줘야한다.*/}
-            <MemorizedBtn text="Continue" />
-            {/*함수형 컴포넌트*/}
+            <Btn text="Save Changes" fontSize={18} />
+            <Btn text={18} fontSize={"18"} />
           </div>
       );
     }
