@@ -50,7 +50,7 @@ f1.shift('peach');
 console.log(f1);
 
 
-// shift와 unshiftsms pop이나 push 보다 느리다. 
+// shift와 unshift는 pop이나 push 보다 느리다. 
 // 배열전체를 밀고당기기 때문에 느려짐
 
 //삭제 
@@ -69,7 +69,7 @@ const newFruits = f1.concat(f2);
 console.log(newFruits);
 
 
-//5. rjator
+//5. 검색 indexof includes
 console.clear();
 console.log(f1);
 console.log(f1.indexOf('apple')); //0
