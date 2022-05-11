@@ -1,0 +1,95 @@
+{
+"kickbike" :[
+    {
+        "bicycle_id" : "kickbike01",
+        "current_la" : "37.559",
+        "current_lo" : "126.83",
+        "breakdown" : "1", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike02",
+        "current_la" : "32.559",
+        "current_lo" : "120.9333",
+        "breakdown" : "1", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike03",
+        "current_la" : "34.559",
+        "current_lo" : "110.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike04",
+        "current_la" : "63.559",
+        "current_lo" : "90.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike05",
+        "current_la" : "30.559",
+        "current_lo" : "50.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike06",
+        "current_la" : "44.559",
+        "current_lo" : "670.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike07",
+        "current_la" : "70.559",
+        "current_lo" : "60.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike08",
+        "current_la" : "55.559",
+        "current_lo" : "23.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike",
+        "current_la" : "54.559",
+        "current_lo" : "45.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    },
+
+    {
+        "bicycle_id" : "kickbike10",
+        "current_la" : "53.559",
+        "current_lo" : "38.9333",
+        "breakdown" : "0", 
+        "batt" : "100",
+        "helmotBoxLock" : "1"
+    }
+    
+]
+
+}
